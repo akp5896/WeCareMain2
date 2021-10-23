@@ -49,5 +49,60 @@
             android:layout_toEndOf="@+id/edPostition"
             android:textColor="@color/cardview_dark_background"
             />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="S M T W R F S"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:id="@+id/tvSelfCare"
+            android:layout_marginStart="40dp"
+            android:layout_below="@+id/edPostition"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0 0 0 0 0 0 0 0"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:layout_marginStart="40dp"
+            android:id="@+id/tvnumSelfCare"
+            android:layout_marginTop="40px"
+            android:layout_below="@+id/tvSelfCare"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvCareToday"
+            android:text="Today: "
+            android:textSize="25sp"
+            android:layout_below="@id/edPostition"
+            android:layout_toEndOf="@+id/tvSelfCare"
+            android:layout_marginStart="40dp"
+            android:textColor="@color/cardview_dark_background"
+            />
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/edNumCareToday"
+            android:text="0"
+            android:inputType="number"
+            android:textSize="25sp"
+            android:layout_below="@id/tvSelfCare"
+            android:layout_toEndOf="@+id/tvSelfCare"
+            android:layout_marginStart="40dp"
+            android:textColor="@color/cardview_dark_background"
+            />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Submit"
+            android:id="@+id/btnSubmitCare"
+            android:layout_toEndOf="@id/edNumCareToday"
+            android:layout_below="@id/tvSelfCare"
+            android:layout_marginTop="20px"
+            android:layout_marginStart="40dp"
+            />
+
     </RelativeLayout>
 </FrameLayout>
