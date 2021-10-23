@@ -25,7 +25,7 @@ public class MotivationActivity extends AppCompatActivity {
     {
         Button btnDream = findViewById(R.id.btnDream);
         btnDream.setOnClickListener(new View.OnClickListener() {
-            @RequiresApi(api = Build.VERSION_CODES.R)
+
             @Override
             public void onClick(View view) {
                 setQuote("dream");
@@ -33,7 +33,7 @@ public class MotivationActivity extends AppCompatActivity {
         });
         Button btnInsp = findViewById(R.id.btnInspire);
         btnInsp.setOnClickListener(new View.OnClickListener() {
-            @RequiresApi(api = Build.VERSION_CODES.R)
+
             @Override
             public void onClick(View view) {
                 setQuote("inspiration");
@@ -41,7 +41,7 @@ public class MotivationActivity extends AppCompatActivity {
         });
         Button btngrow = findViewById(R.id.btnGrow);
         btngrow.setOnClickListener(new View.OnClickListener() {
-            @RequiresApi(api = Build.VERSION_CODES.R)
+
             @Override
             public void onClick(View view) {
                 setQuote("grow");
@@ -49,7 +49,7 @@ public class MotivationActivity extends AppCompatActivity {
         });
         Button btnLove = findViewById(R.id.btLove);
         btnLove.setOnClickListener(new View.OnClickListener() {
-            @RequiresApi(api = Build.VERSION_CODES.R)
+
             @Override
             public void onClick(View view) {
                 setQuote("love");
@@ -57,7 +57,7 @@ public class MotivationActivity extends AppCompatActivity {
         });
         Button btnElse = findViewById(R.id.btnElse);
         btnElse.setOnClickListener(new View.OnClickListener() {
-            @RequiresApi(api = Build.VERSION_CODES.R)
+
             @Override
             public void onClick(View view) {
                 setQuote("else");
@@ -66,7 +66,7 @@ public class MotivationActivity extends AppCompatActivity {
 
 
     }
-    @RequiresApi(api = Build.VERSION_CODES.R)
+
     public void setQuote(String key)
     {
         Random rand = new Random(); //instance of random class

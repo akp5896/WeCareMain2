@@ -1,135 +1,202 @@
 
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/userProfileFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="UserProfile">
-<ScrollView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <RelativeLayout
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <ImageView
+        android:layout_height="match_parent">
 
-            android:id="@+id/ivPicture"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/relativeLayout"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:layout_below="@+id/tvName"
-            android:layout_centerHorizontal="true"
-            android:src="@mipmap/ic_launcher_round" />
-        <TextView
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/tvName"
-            android:text="name"
-            android:layout_centerHorizontal="true"
-            android:textSize="25sp"
-            android:layout_margin="5px"
-            android:textColor="@color/cardview_dark_background"
-            />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/tvLogOut"
-            android:text="Log out"
             android:layout_alignParentEnd="true"
-            android:textSize="20sp"
-            android:layout_margin="7dp"
-            android:textColor="@color/cardview_dark_background"
-            />
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/edPostition"
-            android:text="Position"
-            android:layout_alignParentStart="true"
-            android:textSize="25sp"
-            android:layout_marginStart="80px"
-            android:layout_below="@id/ivPicture"
-            android:textColor="@color/cardview_dark_background"
-            />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/tvChangePostition"
-            android:text="Change"
-            android:textSize="20sp"
-            android:layout_marginTop="15dp"
-            android:layout_marginStart="80px"
-            android:layout_below="@id/ivPicture"
-            android:layout_toEndOf="@+id/edPostition"
-            android:textColor="@color/cardview_dark_background"
-            />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="S M T W R F S"
-            android:textColor="@color/black"
-            android:textSize="25sp"
-            android:id="@+id/tvSelfCare"
-            android:layout_marginStart="40dp"
-            android:layout_below="@+id/edPostition"
-            />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="0 0 0 0 0 0 0 0"
-            android:textColor="@color/black"
-            android:textSize="25sp"
-            android:layout_marginStart="40dp"
-            android:id="@+id/tvnumSelfCare"
-            android:layout_marginTop="40px"
-            android:layout_below="@+id/tvSelfCare"
-            />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/tvCareToday"
-            android:text="Today: "
-            android:textSize="25sp"
-            android:layout_below="@id/edPostition"
-            android:layout_toEndOf="@+id/tvSelfCare"
-            android:layout_marginStart="40dp"
-            android:textColor="@color/cardview_dark_background"
-            />
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/edNumCareToday"
-            android:text="0"
-            android:inputType="number"
-            android:textSize="25sp"
-            android:layout_below="@id/tvSelfCare"
-            android:layout_toEndOf="@+id/tvSelfCare"
-            android:layout_marginStart="40dp"
-            android:textColor="@color/cardview_dark_background"
-            />
-        <com.github.mikephil.charting.charts.BarChart
-            android:id="@+id/chart"
-            android:layout_below="@+id/edNumCareToday"
-            android:layout_width="match_parent"
-            android:layout_height="250dp" />
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Submit"
-            android:id="@+id/btnSubmitCare"
-            android:layout_toEndOf="@id/edNumCareToday"
-            android:layout_below="@id/tvSelfCare"
-            android:layout_marginTop="20px"
-            android:layout_marginStart="40dp"
-            />
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="1dp"
-            android:layout_below="@+id/chart"
-            android:id="@+id/btnGetQuote"
-            android:text="Get a quote" />
+            android:layout_alignParentBottom="true"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="66dp">
 
-    </RelativeLayout>
-</ScrollView>
+            <ImageView
+
+                android:id="@+id/ivPicture"
+                android:layout_width="match_parent"
+                android:layout_height="152dp"
+                android:layout_marginTop="5px"
+                android:src="@mipmap/ic_launcher_round"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvName" />
+
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5px"
+                android:layout_marginTop="5px"
+                android:layout_marginEnd="5px"
+                android:layout_marginBottom="5px"
+                android:text="name"
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="25sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvLogOut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="7dp"
+                android:layout_marginStart="5px"
+                android:layout_marginTop="5px"
+                android:layout_marginEnd="5px"
+                android:layout_marginBottom="5px"
+                android:text="Log out"
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/edPostition"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-7dp"
+                android:text="Position"
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ivPicture" />
+
+            <EditText
+                android:id="@+id/edPostition5"
+                android:layout_width="352dp"
+                android:layout_height="42dp"
+                android:layout_marginTop="40dp"
+                android:text="Hospital"
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ivPicture" />
+
+            <TextView
+                android:id="@+id/tvChangePostition"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="163dp"
+                android:text="Change"
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.github.mikephil.charting.charts.BarChart
+                android:id="@+id/chart"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="4dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edNumCareToday" />
+
+            <EditText
+                android:id="@+id/editTextTextPersonName3"
+                android:layout_width="381dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="284dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="Self-Care"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvSelfCare"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="36dp"
+                android:layout_marginTop="108dp"
+                android:text="S M T W R F S"
+                android:textColor="@color/teal_700"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edPostition" />
+
+            <TextView
+                android:id="@+id/tvCareToday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="56dp"
+                android:layout_marginTop="108dp"
+                android:text="Today"
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="20sp"
+                app:layout_constraintStart_toEndOf="@+id/tvSelfCare"
+                app:layout_constraintTop_toBottomOf="@id/edPostition" />
+
+            <Button
+                android:id="@+id/btnSubmitCare"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="56dp"
+                android:layout_marginTop="-13dp"
+                android:text="Submit"
+                app:layout_constraintStart_toEndOf="@id/edNumCareToday"
+                app:layout_constraintTop_toBottomOf="@id/tvSelfCare" />
+
+            <EditText
+                android:id="@+id/edNumCareToday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="56dp"
+                android:layout_marginTop="4dp"
+                android:inputType="number"
+                android:text="0"
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="20sp"
+                app:layout_constraintStart_toEndOf="@+id/tvSelfCare"
+                app:layout_constraintTop_toBottomOf="@id/tvSelfCare" />
+
+            <TextView
+                android:id="@+id/tvnumSelfCare"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="36dp"
+                android:layout_marginTop="8dp"
+                android:text="0 0 0 0 0 0 0 0"
+                android:textColor="@color/teal_200"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvSelfCare" />
+
+            <Button
+                android:id="@+id/btnGetQuote"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="4dp"
+                android:text="Get a quote"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/chart" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="187dp"
+        android:layout_height="wrap_content">
+
+    </com.google.android.material.textfield.TextInputLayout>
 
 </FrameLayout>

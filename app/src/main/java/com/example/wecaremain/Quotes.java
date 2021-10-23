@@ -8,7 +8,7 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Map;
 
-@RequiresApi(api = Build.VERSION_CODES.R)
+
 public class Quotes {
     public static Map<String, ArrayList<String>> dict = Map.of(
             "dream", new ArrayList<String>() {
