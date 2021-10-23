@@ -2,6 +2,8 @@ package com.example.wecaremain;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -10,6 +12,10 @@ import android.view.MenuItem;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
+
+    final FragmentManager fragmentManager = getSupportFragmentManager();
+    private BottomNavigationView bottomNavigationView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,11 +26,13 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                Fragment fragment;
                 switch (item.getItemId()) {
                     case R.id.action_favorites:
                         // do something here
+                        fragment = new UserProfile();
                         Log.i("123","123");
-                        return true;
+                        break;
                     case R.id.action_schedules:
                         // do something here
                         Log.i("123","456");
@@ -35,8 +43,10 @@ public class MainActivity extends AppCompatActivity {
                         return true;
                     default: return true;
                 }
+                fragmentManager.beginTransaction().replace(R.id.flContainer, fragment).commit();
+                return true;
             }
         });
-
+        bottomNavigationView.setSelectedItemId(R.id.action_favorites);
     }
 }
