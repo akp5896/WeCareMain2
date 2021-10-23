@@ -3,13 +3,13 @@ plugins {
 }
 
 android {
-    compileSdkVersion 30
-    buildToolsVersion "30.0.0"
+    compileSdkVersion 31
+    buildToolsVersion "31.0.0"
 
     defaultConfig {
-        applicationId "com.example.wecaremain"
+        applicationId "com.example.wecare"
         minSdkVersion 29
-        targetSdkVersion 30
+        targetSdkVersion 31
         versionCode 1
         versionName "1.0"
 
@@ -28,24 +28,12 @@ android {
     }
 }
 
-ext {
-    appCompatVersion = '1.0.0'
-    designSupportVersion = '1.0.0'
-    recyclerViewVersion = '1.0.0'
-}
-
 dependencies {
     implementation 'com.github.parse-community.Parse-SDK-Android:parse:1.25.0'
     implementation 'com.squareup.okhttp3:logging-interceptor:3.8.1' // for logging API calls to LogCat
-
     implementation 'androidx.appcompat:appcompat:1.3.1'
     implementation 'com.google.android.material:material:1.4.0'
-    implementation "androidx.appcompat:appcompat:${appCompatVersion}"
-    implementation "com.google.android.material:material:${designSupportVersion}"
-    implementation "androidx.recyclerview:recyclerview:${recyclerViewVersion}"
-
     implementation 'androidx.constraintlayout:constraintlayout:2.1.1'
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
