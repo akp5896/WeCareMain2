@@ -6,13 +6,13 @@
         android:id="@+id/action_schedules"
         android:enabled="true"
         android:icon="@drawable/ic_launcher_foreground"
-        android:title="two"
+        android:title="Vent"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/action_music"
         android:enabled="true"
         android:icon="@drawable/ic_launcher_background"
-        android:title="three"
+        android:title="Channels"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/action_profile"

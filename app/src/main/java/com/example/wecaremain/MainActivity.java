@@ -41,7 +41,8 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.action_music:
                         // do something here
                         Log.i("123","789");
-                        return true;
+                        fragment = new ChannelFragment();
+                        break;
                     default: return true;
                 }
                 fragmentManager.beginTransaction().replace(R.id.flContainer, fragment).commit();
