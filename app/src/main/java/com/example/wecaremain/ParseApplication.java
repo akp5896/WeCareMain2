@@ -13,7 +13,7 @@ public class ParseApplication extends Application {
     public void onCreate() {
         super.onCreate();
 
-        // Use for troubleshooting -- remove this line for production
+        // Use for troubleshooting -- remove this line for pro`duction
         Parse.setLogLevel(Parse.LOG_LEVEL_DEBUG);
 
         // Use for monitoring Parse OkHttp traffic

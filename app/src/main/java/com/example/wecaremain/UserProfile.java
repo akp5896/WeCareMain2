@@ -3,10 +3,12 @@ package com.example.wecaremain;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 
 import android.provider.MediaStore;
@@ -14,6 +16,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -26,10 +29,19 @@ import com.parse.ParseFile;
 import com.parse.ParseUser;
 import com.parse.SaveCallback;
 
+import org.jetbrains.annotations.NotNull;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.w3c.dom.Text;
+
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Calendar;
+import java.util.Random;
 
 import static android.app.Activity.RESULT_OK;
 
@@ -83,8 +95,13 @@ public class UserProfile extends Fragment {
 
     TextView tvName;
     EditText tvPosition;
+    TextView tvCare;
     TextView tvChangePosition;
     ImageView ivProfilePicture;
+    EditText edNumCareToday;
+    Button btnQuote;
+    TextView tvLogout;
+    Button btnSubmitCare;
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable  Bundle savedInstanceState) {
@@ -92,9 +109,14 @@ public class UserProfile extends Fragment {
         ParseUser user = ParseUser.getCurrentUser();
         tvName = view.findViewById(R.id.tvName);
         tvPosition = view.findViewById(R.id.edPostition);
+        tvCare = view.findViewById(R.id.tvnumSelfCare);
         tvChangePosition = view.findViewById(R.id.tvChangePostition);
         tvName.setText(user.getUsername());
+
         ivProfilePicture = view.findViewById(R.id.ivPicture);
+        edNumCareToday = view.findViewById(R.id.edNumCareToday);
+        btnSubmitCare = view.findViewById(R.id.btnSubmitCare);
+        tvLogout = view.findViewById(R.id.tvLogOut);
 
         tvPosition.setText(user.getString("position"));
 
@@ -126,6 +148,63 @@ public class UserProfile extends Fragment {
             e.printStackTrace();
         }
 
+        StringBuilder sb = setCare(user);
+        tvCare.setText(sb);
+        btnSubmitCare.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                JSONArray c = user.getJSONArray("care");
+                Calendar calendar = Calendar.getInstance();
+                int day = calendar.get(Calendar.DAY_OF_WEEK);
+                try {
+                    c.put(day % 7, Integer.parseInt(edNumCareToday.getText().toString()));
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                user.put("care",c);
+                tvCare.setText(setCare(user));
+                user.saveInBackground();
+
+            }
+        });
+        btnQuote = view.findViewById(R.id.btnGetQuote);
+        btnQuote.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getActivity(), MotivationActivity.class);
+                startActivity(i);
+            }
+        });
+        tvLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ParseUser.logOut();
+                Intent i = new Intent(getActivity(), LoginActivity.class);
+                startActivity(i);
+                getActivity().finish();
+            }
+        });
+
+
+    }
+
+
+
+
+    @NotNull
+    private StringBuilder setCare(ParseUser user) {
+        StringBuilder sb = new StringBuilder();
+        JSONArray care = user.getJSONArray("care");
+        for (int i = 0; i < care.length(); i++)
+        {
+            try {
+                sb.append(care.getString(i));
+                sb.append("  " );
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+        return sb;
     }
 
     public void onActivityResult(int requestCode, int resultCode, Intent data){
