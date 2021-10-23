@@ -32,7 +32,7 @@ public class ChennlAdapter extends RecyclerView.Adapter<ChennlAdapter.ViewHolder
     @NotNull
     @Override
     public ChennlAdapter.ViewHolder onCreateViewHolder(@NonNull @NotNull ViewGroup parent, int viewType) {
-        View posts = LayoutInflater.from(context).inflate(R.layout.item_vent,parent,false);
+        View posts = LayoutInflater.from(context).inflate(R.layout.item_channel,parent,false);
         return new ViewHolder(posts);
     }
 
@@ -63,7 +63,7 @@ public class ChennlAdapter extends RecyclerView.Adapter<ChennlAdapter.ViewHolder
         TextView tvStory;
         public ViewHolder(@NonNull @NotNull View itemView) {
             super(itemView);
-            tvStory = itemView.findViewById(R.id.tvVentStory);
+            tvStory = itemView.findViewById(R.id.tvChannel);
 
         }
 

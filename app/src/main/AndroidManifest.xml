@@ -16,6 +16,7 @@
         <activity android:name=".Comments"></activity>
         <activity android:name=".userSignUp" />
         <activity android:name=".MainActivity" />
+        <activity android:name=".MotivationActivity" />
         <activity android:name=".ventCompose" />
         <activity
             android:name=".LoginActivity"

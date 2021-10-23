@@ -16,27 +16,26 @@ import java.util.List;
 
 public class Comments extends AppCompatActivity {
 
-    ArrayList<String> channels;
+    ArrayList<Comment> comments;
     RecyclerView rvStories;
-    ChennlAdapter adapter ;
+    CommentsAdapter adapter ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_comments3);
     rvStories = findViewById(R.id.rvPosts);
 
-        channels = new ArrayList<>();
-        adapter = new ChennlAdapter(Comments.this, channels);
+        comments = new ArrayList<>();
+        adapter = new CommentsAdapter(Comments.this, comments);
         rvStories.setLayoutManager(new LinearLayoutManager(Comments.this));
         rvStories.setAdapter(adapter);
-        populateQueryPosts(0);
+        populateQueryPosts();
     }
 
-    protected void populateQueryPosts(int skip)
+    protected void populateQueryPosts()
     {
         ParseQuery<Comment> query = ParseQuery.getQuery(Comment.class);
         query.include("Author");
-        query.setSkip(skip);
         query.setLimit(5);
         query.whereEqualTo("channel", getIntent().getExtras().getString("cname"));
         query.addDescendingOrder(Comment.KEY_CREATED_AT);
@@ -51,10 +50,7 @@ public class Comments extends AppCompatActivity {
 
 
                 adapter.clear();
-                for(Comment c : p)
-                {
-                    adapter.add(c.getParseUser("Author").getUsername() + " : " + c.getString("text"));
-                }
+                adapter.addAll(p);
                 adapter.notifyDataSetChanged();
             }
         });
