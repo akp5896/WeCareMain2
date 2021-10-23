@@ -148,7 +148,12 @@ public class UserProfile extends Fragment {
             e.printStackTrace();
         }
 
-        StringBuilder sb = setCare(user);
+        StringBuilder sb = null;
+        try {
+            sb = setCare(user);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
         tvCare.setText(sb);
         btnSubmitCare.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -162,7 +167,11 @@ public class UserProfile extends Fragment {
                     e.printStackTrace();
                 }
                 user.put("care",c);
-                tvCare.setText(setCare(user));
+                try {
+                    tvCare.setText(setCare(user));
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
                 user.saveInBackground();
 
             }
@@ -192,9 +201,17 @@ public class UserProfile extends Fragment {
 
 
     @NotNull
-    private StringBuilder setCare(ParseUser user) {
+    private StringBuilder setCare(ParseUser user) throws JSONException {
         StringBuilder sb = new StringBuilder();
         JSONArray care = user.getJSONArray("care");
+        if(care == null)
+        {
+            care = new JSONArray();
+            for (int i = 0; i < 7; i++)
+            {
+                care.put(0, i);
+            }
+        }
         for (int i = 0; i < care.length(); i++)
         {
             try {
