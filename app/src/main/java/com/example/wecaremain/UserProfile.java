@@ -227,7 +227,11 @@ public class UserProfile extends Fragment {
         for (int i = 0; i < care.length(); i++)
         {
             try {
-                sb.append(care.getString(i));
+                String x = care.getString(i);
+                if(x.equals("null"))
+                    x = "0";
+
+                sb.append(x);
                 sb.append("  " );
             } catch (JSONException e) {
                 e.printStackTrace();
