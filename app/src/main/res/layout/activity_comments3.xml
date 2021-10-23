@@ -10,4 +10,16 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
 />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/edComment"
+        android:layout_above="@+id/btnCOmpose"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add comment"
+        android:id="@+id/btnCOmpose"
+        android:layout_alignParentBottom="true"
+        />
 </RelativeLayout>
