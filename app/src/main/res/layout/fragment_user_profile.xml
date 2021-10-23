@@ -35,11 +35,8 @@
                 android:id="@+id/tvName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5px"
                 android:layout_marginTop="5px"
-                android:layout_marginEnd="5px"
-                android:layout_marginBottom="5px"
-                android:text="name"
+                android:text="Name"
                 android:textColor="@color/cardview_dark_background"
                 android:textSize="25sp"
                 app:layout_constraintLeft_toLeftOf="parent"
@@ -65,24 +62,13 @@
                 android:id="@+id/edPostition"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="-7dp"
-                android:text="Position"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="28dp"
+                android:text="Position, Hospital"
                 android:textColor="@color/cardview_dark_background"
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/ivPicture" />
-
-            <EditText
-                android:id="@+id/edPostition5"
-                android:layout_width="352dp"
-                android:layout_height="42dp"
-                android:layout_marginTop="40dp"
-                android:text="Hospital"
-                android:textColor="@color/cardview_dark_background"
-                android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/ivPicture" />
 
@@ -90,11 +76,12 @@
                 android:id="@+id/tvChangePostition"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="163dp"
+                android:layout_marginTop="228dp"
                 android:text="Change"
                 android:textColor="@color/cardview_dark_background"
                 android:textSize="15sp"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.933"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -115,11 +102,13 @@
                 android:layout_marginTop="284dp"
                 android:ems="10"
                 android:inputType="textPersonName"
+                android:minHeight="48dp"
                 android:text="Self-Care"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
             <TextView
                 android:id="@+id/tvSelfCare"
@@ -162,6 +151,7 @@
                 android:layout_marginStart="56dp"
                 android:layout_marginTop="4dp"
                 android:inputType="number"
+                android:minWidth="48dp"
                 android:text="0"
                 android:textColor="@color/cardview_dark_background"
                 android:textSize="20sp"
