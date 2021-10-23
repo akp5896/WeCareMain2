@@ -3,10 +3,12 @@ package com.example.wecaremain;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 
 import android.provider.MediaStore;
@@ -39,6 +41,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
+import java.util.Random;
 
 import static android.app.Activity.RESULT_OK;
 
@@ -96,6 +99,8 @@ public class UserProfile extends Fragment {
     TextView tvChangePosition;
     ImageView ivProfilePicture;
     EditText edNumCareToday;
+    Button btnQuote;
+    TextView tvLogout;
     Button btnSubmitCare;
 
     @Override
@@ -107,9 +112,11 @@ public class UserProfile extends Fragment {
         tvCare = view.findViewById(R.id.tvnumSelfCare);
         tvChangePosition = view.findViewById(R.id.tvChangePostition);
         tvName.setText(user.getUsername());
+
         ivProfilePicture = view.findViewById(R.id.ivPicture);
         edNumCareToday = view.findViewById(R.id.edNumCareToday);
         btnSubmitCare = view.findViewById(R.id.btnSubmitCare);
+        tvLogout = view.findViewById(R.id.tvLogOut);
 
         tvPosition.setText(user.getString("position"));
 
@@ -150,7 +157,7 @@ public class UserProfile extends Fragment {
                 Calendar calendar = Calendar.getInstance();
                 int day = calendar.get(Calendar.DAY_OF_WEEK);
                 try {
-                    c.put(day, Integer.parseInt(edNumCareToday.getText().toString()));
+                    c.put(day % 7, Integer.parseInt(edNumCareToday.getText().toString()));
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -160,7 +167,29 @@ public class UserProfile extends Fragment {
 
             }
         });
+        btnQuote = view.findViewById(R.id.btnGetQuote);
+        btnQuote.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getActivity(), MotivationActivity.class);
+                startActivity(i);
+            }
+        });
+        tvLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ParseUser.logOut();
+                Intent i = new Intent(getActivity(), LoginActivity.class);
+                startActivity(i);
+                getActivity().finish();
+            }
+        });
+
+
     }
+
+
+
 
     @NotNull
     private StringBuilder setCare(ParseUser user) {
