@@ -13,9 +13,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.WeCareMain">
-        <activity android:name=".userSignUp"></activity>
-        <activity android:name=".MainActivity"></activity>
-        <activity android:name=".ventCompose"></activity>
+        <activity android:name=".Comments"></activity>
+        <activity android:name=".userSignUp" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".ventCompose" />
         <activity
             android:name=".LoginActivity"
             android:exported="true">
