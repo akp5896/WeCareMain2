@@ -24,6 +24,12 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.CircleCrop;
+import com.github.mikephil.charting.charts.BarChart;
+import com.github.mikephil.charting.components.Description;
+import com.github.mikephil.charting.data.BarData;
+import com.github.mikephil.charting.data.BarDataSet;
+import com.github.mikephil.charting.data.BarEntry;
+import com.github.mikephil.charting.data.Entry;
 import com.parse.ParseException;
 import com.parse.ParseFile;
 import com.parse.ParseUser;
@@ -117,6 +123,36 @@ public class UserProfile extends Fragment {
         edNumCareToday = view.findViewById(R.id.edNumCareToday);
         btnSubmitCare = view.findViewById(R.id.btnSubmitCare);
         tvLogout = view.findViewById(R.id.tvLogOut);
+        BarChart chart = (BarChart) view.findViewById(R.id.chart);
+
+        ArrayList NoOfEmp = new ArrayList();
+
+        JSONArray c = user.getJSONArray("care");
+        for(int i = 0; i < 7; i++)
+        {
+
+            try {
+                if(c.get(i) == null)
+                    NoOfEmp.add(new BarEntry(i, 0));
+                else
+                    NoOfEmp.add(new BarEntry(i, c.getInt(i)));
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+
+
+
+        BarDataSet bardataset = new BarDataSet(NoOfEmp, "Times of self care");
+        chart.animateY(5000);
+        BarData data = new BarData(bardataset);
+        chart.setData(data);
+        Description d = new Description();
+        d.setText("Times of self care");
+        chart.setDescription(d);
+        chart.animateXY(200, 200);
+        chart.invalidate();
+
 
         tvPosition.setText(user.getString("position"));
 
@@ -209,8 +245,6 @@ public class UserProfile extends Fragment {
     }
 
 
-
-
     @NotNull
     private StringBuilder setCare(ParseUser user) throws JSONException {
         StringBuilder sb = new StringBuilder();
@@ -220,6 +254,7 @@ public class UserProfile extends Fragment {
             care = new JSONArray();
             for (int i = 0; i < 7; i++)
             {
+
                 care.put(0, i);
             }
             user.saveInBackground();
@@ -230,7 +265,6 @@ public class UserProfile extends Fragment {
                 String x = care.getString(i);
                 if(x.equals("null"))
                     x = "0";
-
                 sb.append(x);
                 sb.append("  " );
             } catch (JSONException e) {
