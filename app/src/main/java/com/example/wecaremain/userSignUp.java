@@ -42,8 +42,8 @@ public class userSignUp extends AppCompatActivity {
                             return;
                         }
                         Toast.makeText(userSignUp.this, "User created!", Toast.LENGTH_SHORT).show();
-//                        Intent i = new Intent(userSignUp.this, LoginActivity.class);
-//                        startActivity(i);
+                        Intent i = new Intent(userSignUp.this, LoginActivity.class);
+                        startActivity(i);
                         finish();
                     }
                 });
