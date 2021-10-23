@@ -161,6 +161,17 @@ public class UserProfile extends Fragment {
                 JSONArray c = user.getJSONArray("care");
                 Calendar calendar = Calendar.getInstance();
                 int day = calendar.get(Calendar.DAY_OF_WEEK);
+                if(c == null) {
+                    c = new JSONArray();
+                    for(int i = 0; i < 7; i++)
+                    {
+                        try {
+                            c.put(i, 0);
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
                 try {
                     c.put(day % 7, Integer.parseInt(edNumCareToday.getText().toString()));
                 } catch (JSONException e) {
@@ -211,6 +222,7 @@ public class UserProfile extends Fragment {
             {
                 care.put(0, i);
             }
+            user.saveInBackground();
         }
         for (int i = 0; i < care.length(); i++)
         {
