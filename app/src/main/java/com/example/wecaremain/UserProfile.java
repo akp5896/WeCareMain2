@@ -150,7 +150,6 @@ public class UserProfile extends Fragment {
         Description d = new Description();
         d.setText("Times of self care");
         chart.setDescription(d);
-        chart.animateXY(200, 200);
         chart.invalidate();
 
 
