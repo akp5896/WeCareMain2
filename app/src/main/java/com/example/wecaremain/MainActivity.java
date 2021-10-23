@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 Fragment fragment;
                 switch (item.getItemId()) {
-                    case R.id.action_favorites:
+                    case R.id.action_profile:
                         // do something here
                         fragment = new UserProfile();
                         Log.i("123","123");
@@ -47,6 +47,6 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
-        bottomNavigationView.setSelectedItemId(R.id.action_favorites);
+        bottomNavigationView.setSelectedItemId(R.id.action_profile);
     }
 }
