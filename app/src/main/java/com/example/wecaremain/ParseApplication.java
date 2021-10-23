@@ -15,6 +15,7 @@ public class ParseApplication extends Application {
 
         // Use for troubleshooting -- remove this line for pro`duction
         Parse.setLogLevel(Parse.LOG_LEVEL_DEBUG);
+        ParseObject.registerSubclass(VentStory.class);
 
         // Use for monitoring Parse OkHttp traffic
         // Can be Level.BASIC, Level.HEADERS, or Level.BODY

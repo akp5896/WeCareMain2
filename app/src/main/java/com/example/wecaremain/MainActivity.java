@@ -36,7 +36,8 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.action_schedules:
                         // do something here
                         Log.i("123","456");
-                        return true;
+                        fragment = new VentList();
+                        break;
                     case R.id.action_music:
                         // do something here
                         Log.i("123","789");
