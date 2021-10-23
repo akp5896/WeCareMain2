@@ -32,7 +32,8 @@ public class ParseApplication extends Application {
                 .server("https://parseapi.back4app.com").build());
 
         ParseObject testObject = new ParseObject("TestObject");
-        testObject.put("foo", "bar");
+        testObject.put("foo", "test");
         testObject.saveInBackground();
+
     }
 }
