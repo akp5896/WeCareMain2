@@ -23,6 +23,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="169dp"
         android:layout_marginEnd="70dp"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
@@ -42,6 +43,7 @@
         android:text="Improve the Day with WeCare"
         android:textSize="20sp"
         android:textStyle="bold"
+        android:layout_below="@+id/imageView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="379dp" />
@@ -60,6 +62,7 @@
         android:text="WeCare is a self-care and social media app. Registered members may connect with like-minded healthcare to improve mental health and stress in the workspace. WeCare encourages others to lean on each other when life gets tough."
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
+        android:layout_below="@+id/textView2"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="405dp" />
