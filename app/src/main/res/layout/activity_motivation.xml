@@ -76,4 +76,10 @@
         android:layout_below="@id/rvQuote"
         android:layout_centerHorizontal="true"
         android:text="Quote to come"/>
+    <ImageView
+        android:layout_width="400dp"
+        android:layout_height="350dp"
+        android:background="@drawable/clip1372"
+        android:layout_marginBottom="50dp"
+        android:layout_alignParentBottom="true"/>
 </RelativeLayout>
