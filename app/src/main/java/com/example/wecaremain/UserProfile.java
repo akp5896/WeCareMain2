@@ -208,7 +208,7 @@ public class UserProfile extends Fragment {
                     }
                 }
                 try {
-                    c.put(day % 7, Integer.parseInt(edNumCareToday.getText().toString()));
+                    c.put((day - 1) % 7, Integer.parseInt(edNumCareToday.getText().toString()));
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -265,7 +265,7 @@ public class UserProfile extends Fragment {
                 if(x.equals("null"))
                     x = "0";
                 sb.append(x);
-                sb.append("  " );
+                sb.append("     " );
             } catch (JSONException e) {
                 e.printStackTrace();
             }

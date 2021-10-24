@@ -11,47 +11,62 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <RelativeLayout
             android:id="@+id/relativeLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
+
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="66dp">
-
             <ImageView
-
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:id="@+id/ivTopImage"
+                android:background="@drawable/unknown"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="My Profile"
+                android:textSize="20sp"
+                android:id="@+id/tvMyProf"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/ivTopImage"
+                android:layout_marginTop="-30dp"
+                />
+            <ImageView
                 android:id="@+id/ivPicture"
                 android:layout_width="match_parent"
                 android:layout_height="152dp"
-                android:layout_marginTop="5px"
+                android:layout_below="@+id/tvName"
+                android:layout_marginTop="7dp"
                 android:src="@mipmap/ic_launcher_round"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvName" />
 
             <TextView
+                android:layout_below="@+id/tvMyProf"
+                android:layout_centerHorizontal="true"
+                android:textStyle="bold"
                 android:id="@+id/tvName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5px"
                 android:text="Name"
                 android:textColor="@color/cardview_dark_background"
-                android:textSize="25sp"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:textSize="15sp" />
 
             <TextView
                 android:id="@+id/tvLogOut"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="7dp"
-                android:layout_marginStart="5px"
-                android:layout_marginTop="5px"
-                android:layout_marginEnd="5px"
-                android:layout_marginBottom="5px"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="5dp"
+                android:textStyle="bold"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="16dp"
                 android:text="Log out"
                 android:textColor="@color/cardview_dark_background"
                 android:textSize="20sp"
@@ -63,20 +78,20 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
-                android:layout_marginTop="28dp"
+                android:layout_marginTop="7dp"
+                android:layout_below="@+id/ivPicture"
                 android:text="Position, Hospital"
                 android:textColor="@color/cardview_dark_background"
-                android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/ivPicture" />
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/tvChangePostition"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="228dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="24dp"
+                android:layout_below="@+id/ivPicture"
                 android:text="Change"
                 android:textColor="@color/cardview_dark_background"
                 android:textSize="15sp"
@@ -88,36 +103,59 @@
             <com.github.mikephil.charting.charts.BarChart
                 android:id="@+id/chart"
                 android:layout_width="match_parent"
-                android:layout_height="250dp"
-                android:layout_marginTop="8dp"
+                android:layout_height="160dp"
+                android:layout_below="@+id/btnSubmitCare"
+                android:layout_marginTop="10dp"
                 android:layout_marginEnd="4dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/edNumCareToday" />
-
-            <EditText
-                android:id="@+id/editTextTextPersonName3"
-                android:layout_width="381dp"
-                android:layout_height="45dp"
+            <View
                 android:layout_marginStart="24dp"
-                android:layout_marginTop="284dp"
+                android:layout_marginEnd="24dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/tvChangePostition"
+                android:layout_marginTop="11dp"
+                android:background="@android:color/darker_gray"/>
+            <TextView
+                android:id="@+id/editTextTextPersonName3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/edPostition"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="24dp"
                 android:ems="10"
+                android:gravity="center"
                 android:inputType="textPersonName"
                 android:minHeight="48dp"
-                android:text="Self-Care"
+                android:text="Self-Care Weekly Calendar"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
-
+            <View
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/editTextTextPersonName3"
+                android:background="@android:color/darker_gray"/>
             <TextView
                 android:id="@+id/tvSelfCare"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="36dp"
-                android:layout_marginTop="108dp"
-                android:text="S M T W R F S"
-                android:textColor="@color/teal_700"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="135dp"
+                android:layout_marginTop="10dp"
+                android:textStyle="bold"
+                android:layout_below="@+id/editTextTextPersonName3"
+                android:text="S   M    T    W     R     F     S"
+                android:textColor="@color/black"
                 android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/edPostition" />
@@ -127,20 +165,30 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="56dp"
-                android:layout_marginTop="108dp"
+                android:layout_below="@+id/editTextTextPersonName3"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="20dp"
                 android:text="Today"
                 android:textColor="@color/cardview_dark_background"
-                android:textSize="20sp"
+                android:textSize="15sp"
+                android:layout_marginEnd="24dp"
                 app:layout_constraintStart_toEndOf="@+id/tvSelfCare"
                 app:layout_constraintTop_toBottomOf="@id/edPostition" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnSubmitCare"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_marginEnd="12dp"
+                android:background="@drawable/button_layout"
+                android:backgroundTint="#B7DEE7"
+                android:layout_width="54dp"
+                android:layout_height="24dp"
                 android:layout_marginStart="56dp"
-                android:layout_marginTop="-13dp"
+                android:layout_marginTop="5dp"
                 android:text="Submit"
+                android:layout_below="@id/edNumCareToday"
+                android:layout_alignParentEnd="true"
+                android:textAllCaps="false"
+                android:textSize="15sp"
                 app:layout_constraintStart_toEndOf="@id/edNumCareToday"
                 app:layout_constraintTop_toBottomOf="@id/tvSelfCare" />
 
@@ -151,7 +199,10 @@
                 android:layout_marginStart="56dp"
                 android:layout_marginTop="4dp"
                 android:inputType="number"
+                android:layout_below="@+id/tvCareToday"
+                android:layout_alignParentEnd="true"
                 android:minWidth="48dp"
+                android:layout_marginEnd="24dp"
                 android:text="0"
                 android:textColor="@color/cardview_dark_background"
                 android:textSize="20sp"
@@ -160,31 +211,48 @@
 
             <TextView
                 android:id="@+id/tvnumSelfCare"
-                android:layout_width="wrap_content"
+                android:layout_below="@+id/tvSelfCare"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="36dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="135dp"
                 android:layout_marginTop="8dp"
-                android:text="0 0 0 0 0 0 0 0"
-                android:textColor="@color/teal_200"
+                android:text="0     0      0      0      0     0     0"
+                android:textColor="@color/black"
                 android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvSelfCare" />
-
-            <Button
-                android:id="@+id/btnGetQuote"
+            <View
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="135dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="4dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/tvnumSelfCare"
+                android:background="@android:color/darker_gray"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnGetQuote"
+
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_alignParentEnd="true"
+
+                android:background="@drawable/button_layout"
+                android:layout_below="@+id/chart"
+                android:layout_marginEnd="48dp"
+                android:layout_marginStart="48dp"
+                android:layout_marginTop="5dp"
                 android:text="Get a quote"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/chart" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        </RelativeLayout>
     </ScrollView>
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="187dp"
+
         android:layout_height="wrap_content">
 
     </com.google.android.material.textfield.TextInputLayout>

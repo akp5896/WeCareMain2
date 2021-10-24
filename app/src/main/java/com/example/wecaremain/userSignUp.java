@@ -4,9 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Spannable;
+import android.text.SpannableStringBuilder;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.parse.ParseException;
@@ -21,10 +24,12 @@ public class userSignUp extends AppCompatActivity {
         setContentView(R.layout.activity_user_sign_up);
         EditText etNewName;
         EditText etNewPass;
+        TextView tvLogin;
         Button btnCreate;
         etNewName = findViewById(R.id.etNewName);
         etNewPass = findViewById(R.id.etNewPass);
         btnCreate = findViewById(R.id.btnCreate);
+        tvLogin = findViewById(R.id.tvBackToLogin);
 
         btnCreate.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,6 +52,18 @@ public class userSignUp extends AppCompatActivity {
                         finish();
                     }
                 });
+            }
+        });
+
+        SpannableStringBuilder str = new SpannableStringBuilder("Already have an account? Log in");
+        str.setSpan(new android.text.style.StyleSpan(android.graphics.Typeface.BOLD), 24, 31, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        tvLogin.setText(str);
+
+        tvLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(userSignUp.this, LoginActivity.class);
+                startActivity(i);
             }
         });
 

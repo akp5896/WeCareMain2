@@ -25,6 +25,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/tvCommentText"
+        android:layout_below="@+id/tvAuthorName"
+        android:layout_marginTop="10dp"
         android:layout_toEndOf="@+id/ivProfilePicture"
         android:text="Add some text here"
         android:layout_marginStart="40px"
