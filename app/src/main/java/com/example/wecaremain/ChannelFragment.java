@@ -64,13 +64,7 @@ public class ChannelFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        relaxActivitiesButton = (Button) relaxActivitiesButton.findViewById(R.id.relaxActivitiesButton);
-        relaxActivitiesButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openRelaxActivities();
-            }
-        });
+
 
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
@@ -86,6 +80,7 @@ public class ChannelFragment extends Fragment {
     ArrayList<String> channels;
     RecyclerView rvStories;
     ChennlAdapter adapter ;
+
     @Override
     public void onViewCreated(@NonNull @NotNull View view, @Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -97,7 +92,13 @@ public class ChannelFragment extends Fragment {
         adapter = new ChennlAdapter(getContext(), channels);
         rvStories.setLayoutManager(new LinearLayoutManager(getContext()));
         rvStories.setAdapter(adapter);
-
+        relaxActivitiesButton = (Button) view.findViewById(R.id.relaxActivitiesButton);
+        relaxActivitiesButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openRelaxActivities();
+            }
+        });
     }
 
     @Override
