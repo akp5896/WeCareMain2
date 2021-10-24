@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".getStarted">
+    tools:context=".gettingStarted">
 
     <ImageView
         android:id="@+id/ivTopImage3"
@@ -52,6 +52,7 @@
         android:id="@+id/textView3"
         android:layout_width="300dp"
         android:layout_height="160dp"
+        android:layout_below="@+id/textView2"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
@@ -62,7 +63,6 @@
         android:text="WeCare is a self-care and social media app. Registered members may connect with like-minded healthcare to improve mental health and stress in the workspace. WeCare encourages others to lean on each other when life gets tough."
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_below="@+id/textView2"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="405dp" />
