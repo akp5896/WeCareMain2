@@ -12,4 +12,19 @@
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="title_activity_comments2">Comments2</string>
+    <string name="todo">todo</string>
+    <string name="title">title</string>
+    <string name="description">description</string>
+    <string-array name="relaxationActivities">
+        <item>Vent Out Your Emotions</item>
+        <item>Breathe In The Relief</item>
+        <item>Paint Your Stress Away</item>
+        <item>Walk Alongside Nature</item>
+    </string-array>
+    <string-array name="rActivityDescriptions">
+        <item>Write it all out. Whatever is on your mind.</item>
+        <item>It\'s time to catch your breath! Breathe in...</item>
+        <item>Try out your creativity! It\'s the effort that matters!</item>
+        <item>Feel the breeze as to open yourself to the elements.</item>
+    </string-array>
 </resources>

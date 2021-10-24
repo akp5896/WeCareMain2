@@ -13,7 +13,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.WeCareMain">
-        <activity android:name=".Comments"></activity>
+        <activity android:name=".MyAdapter"></activity>
+        <activity android:name=".antiburnout" />
+        <activity android:name=".Comments" />
         <activity android:name=".userSignUp" />
         <activity android:name=".MainActivity" />
         <activity android:name=".MotivationActivity" />
