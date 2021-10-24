@@ -22,9 +22,9 @@
         <item>Walk Alongside Nature</item>
     </string-array>
     <string-array name="rActivityDescriptions">
-        <item>Write it all out. Whatever is on your mind.</item>
-        <item>It\'s time to catch your breath! Breathe in...</item>
-        <item>Try out your creativity! It\'s the effort that matters!</item>
-        <item>Feel the breeze as to open yourself to the elements.</item>
+        <item>Write down anything going on in your life— things you are worried about, the stressors weighing you down, or everything in between. Like magic, this calms your mind down and releases your negative thoughts.</item>
+        <item>By stopping to take a deep breath, your heart rate slows, and more oxygen enters your bloodstream. This communicates to your brain to relax. Taking a deep breath can improve the quality of your day.</item>
+        <item>Take out your paintbrush and let go of the problems troubling your mind. Unwind and find your groove; anyone can be an artist when they use their creativity! </item>
+        <item>Walking outside releases endorphins that stimulate relaxation and improve your mood! Enjoying the fresh air and nature is a moment in your day to relax and find gratitude. </item>
     </string-array>
 </resources>
