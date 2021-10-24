@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Pair;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -77,7 +78,7 @@ public class ChannelFragment extends Fragment {
         startActivity(intent);
     }
 
-    ArrayList<String> channels;
+    ArrayList<Pair<String, Pair<Integer, Integer>>> channels;
     RecyclerView rvStories;
     ChennlAdapter adapter ;
 
@@ -86,9 +87,13 @@ public class ChannelFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         rvStories = view.findViewById(R.id.rvPosts);
         channels = new ArrayList<>();
-        channels.add("psychiatrist");
-        channels.add("therapist");
-        channels.add("surgeon");
+
+        channels.add(new Pair<>("Psychiatrist", new Pair<>(R.drawable.psyc, R.color.mind)));
+        channels.add(new Pair<>("Therapist", new Pair<>(R.drawable.ther, R.color.light_blue)));
+        channels.add(new Pair<>("Surgeon", new Pair<>(R.drawable.surge, R.color.yellow)));
+        channels.add(new Pair<>("Nursing", new Pair<>(R.drawable.psyc, R.color.purple)));
+        channels.add(new Pair<>("Psysician", new Pair<>(R.drawable.phys, R.color.mind)));
+        channels.add(new Pair<>("EMT/Paramedic", new Pair<>(R.drawable.para, R.color.light_blue)));
         adapter = new ChennlAdapter(getContext(), channels);
         rvStories.setLayoutManager(new LinearLayoutManager(getContext()));
         rvStories.setAdapter(adapter);

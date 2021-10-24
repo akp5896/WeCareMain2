@@ -38,9 +38,13 @@
         tools:layout_editor_absoluteX="34dp"
         tools:layout_editor_absoluteY="168dp" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button"
+        android:background="@drawable/button_layout"
+        android:backgroundTint="@color/light_blue"
         android:layout_width="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:textAllCaps="false"
         android:layout_below="@+id/edVent"
         android:layout_alignParentEnd="true"
         android:layout_height="wrap_content"
