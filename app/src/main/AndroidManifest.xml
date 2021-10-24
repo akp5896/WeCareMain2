@@ -13,15 +13,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.WeCareMain">
-        <activity android:name=".MyAdapter"></activity>
+        <activity android:name=".MyAdapter" />
         <activity android:name=".antiburnout" />
         <activity android:name=".Comments" />
         <activity android:name=".userSignUp" />
         <activity android:name=".MainActivity" />
         <activity android:name=".MotivationActivity" />
         <activity android:name=".ventCompose" />
-        <activity
-            android:name=".LoginActivity"
+        <activity android:name=".gettingStarted"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
