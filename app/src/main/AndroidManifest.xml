@@ -19,6 +19,7 @@
         <activity android:name=".userSignUp" />
         <activity android:name=".MainActivity" />
         <activity android:name=".MotivationActivity" />
+        <activity android:name=".LoginActivity" />
         <activity android:name=".ventCompose" />
         <activity android:name=".gettingStarted"
             android:exported="true">
