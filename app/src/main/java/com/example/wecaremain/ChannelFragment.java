@@ -27,6 +27,8 @@ import java.util.ArrayList;
  */
 public class ChannelFragment extends Fragment {
 
+    private Button relaxActivitiesButton;
+
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -61,21 +63,28 @@ public class ChannelFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
+
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
 
+    private void openRelaxActivities() {
+        Intent intent = new Intent(getActivity(), antiburnout.class);
+        startActivity(intent);
+    }
+
     ArrayList<String> channels;
     RecyclerView rvStories;
     ChennlAdapter adapter ;
-    Button antibutton;
+
     @Override
     public void onViewCreated(@NonNull @NotNull View view, @Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         rvStories = view.findViewById(R.id.rvPosts);
-        antibutton = view.findViewById(R.id.antibutton);
         channels = new ArrayList<>();
         channels.add("psychiatrist");
         channels.add("therapist");
@@ -83,11 +92,11 @@ public class ChannelFragment extends Fragment {
         adapter = new ChennlAdapter(getContext(), channels);
         rvStories.setLayoutManager(new LinearLayoutManager(getContext()));
         rvStories.setAdapter(adapter);
-        antibutton.setOnClickListener(new View.OnClickListener() {
+        relaxActivitiesButton = (Button) view.findViewById(R.id.relaxActivitiesButton);
+        relaxActivitiesButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                Intent i = new Intent(getActivity(), antiburnout.class);
-                startActivity(i);
+            public void onClick(View view) {
+                openRelaxActivities();
             }
         });
     }
