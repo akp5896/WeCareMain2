@@ -38,8 +38,8 @@ public class Quotes {
                     add("Life is about accepting the challenges along the way, choosing to keep moving forward, and savoring the journey.");
                     add("Never lose hope. Storms make people stronger and never last forever.”\n" +
                             "optimism:“Great things happen to those who don't stop believing, trying, learning, and being grateful.");
-                    add("Let the improvement of yourself keep you so busy that you have no time to criticize others.”\n" +
-                            "motivation“Of course motivation is not permanent. But then, neither is bathing; but it is something you should do on a regular basis.");
+                    add("Let the improvement of yourself keep you so busy that you have no time to criticize others.");
+                    add("Of course motivation is not permanent. But then, neither is bathing; but it is something you should do on a regular basis.");
 
                 }
             },
